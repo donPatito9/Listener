@@ -1,7 +1,6 @@
 package cl.iplacex.config;
 
 import javax.jms.ConnectionFactory;
-//import jakarta.jms.ConnectionFactory;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.jms.DefaultJmsListenerContainerFactoryConfigurer;
@@ -14,7 +13,6 @@ import org.springframework.jms.support.converter.MessageConverter;
 import org.springframework.jms.support.converter.MessageType;
 
 @Configuration
-
 public class ConnectionFactoryConfig {
     @Value("tcp://localhost:61616")
     String brokerUrl;
@@ -38,7 +36,6 @@ public class ConnectionFactoryConfig {
         converter.setTypeIdPropertyName("_type");
         return converter;
     }
-
 
     @Bean
     public JmsListenerContainerFactory<?> jsaFactory(ConnectionFactory connectionFactory,
